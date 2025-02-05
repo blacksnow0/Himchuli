@@ -2,6 +2,8 @@
 import React, { useState, useEffect } from "react";
 import { Typewriter } from "react-simple-typewriter";
 import { FaSearch } from "react-icons/fa";
+import Image from "next/image";
+
 import background from "../../../public/images/background.jpg";
 import background1 from "../../../public/images/background1.jpg";
 import background2 from "../../../public/images/background2.jpg";
@@ -21,13 +23,7 @@ function Hero() {
   }, []);
 
   return (
-    <section
-      className="relative w-full h-[80vh] bg-cover bg-center bg-fixed"
-      style={{
-        backgroundImage: `url(${backgroundImages[currentImage].src})`,
-        transition: "background 1s ease-in-out",
-      }}
-    >
+    <section className="relative w-full h-[80vh] bg-cover bg-center bg-fixed">
       <div className="absolute inset-0 bg-gradient-to-b from-black via-transparent to-black opacity-60"></div>
 
       <div className="absolute inset-0 flex flex-col items-center justify-center text-center z-10 space-y-6">
@@ -58,6 +54,18 @@ function Hero() {
         <div className="absolute bottom-10 animate-bounce text-3xl">
           <span className="text-primary">↓</span>
         </div>
+      </div>
+
+      <div className="absolute inset-0 z-0">
+        <Image
+          src={backgroundImages[currentImage]}
+          alt="background"
+          fill
+          style={{ objectFit: "cover" }}
+          quality={100}
+          sizes="100vw"
+          priority={true}
+        />
       </div>
     </section>
   );

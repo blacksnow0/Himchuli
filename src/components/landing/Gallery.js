@@ -63,7 +63,6 @@ const Gallery = () => {
       </div>
 
       <div className="relative w-full md:w-3/4">
-        {" "}
         <Swiper
           ref={swiperRef}
           slidesPerView={1.5}
@@ -78,8 +77,14 @@ const Gallery = () => {
           className="gallery-swiper"
         >
           {images.map((image, index) => {
-            const parallaxX = (mousePos.x / windowSize.width) * 30 - 5;
-            const parallaxY = (mousePos.y / windowSize.height) * 30 - 5;
+            const parallaxX =
+              windowSize.width > 768
+                ? (mousePos.x / windowSize.width) * 30 - 5
+                : 0;
+            const parallaxY =
+              windowSize.width > 768
+                ? (mousePos.y / windowSize.height) * 30 - 5
+                : 0;
 
             return (
               <SwiperSlide key={index} className="relative overflow-hidden">
@@ -98,6 +103,7 @@ const Gallery = () => {
                       src={image.src}
                       alt={image.alt}
                       fill
+                      sizes="(max-width: 768px) 100vw, 50vw"
                       style={{ objectFit: "cover" }}
                       onClick={() => handleImageClick(index)}
                     />

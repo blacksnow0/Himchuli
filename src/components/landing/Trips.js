@@ -87,6 +87,8 @@ const TrekCarousel = () => {
                 src={trek.image}
                 alt={trek.name}
                 fill
+                sizes="(max-width: 768px) 100vw, 50vw"
+                style={{ objectFit: "cover" }}
                 className="object-cover rounded-lg"
                 priority={index === 0}
               />
