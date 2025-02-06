@@ -1,5 +1,6 @@
 "use client";
 import Footer from "@/components/Footer";
+import ContactUs from "@/components/landing/Contactus";
 import Gallery from "@/components/landing/Gallery";
 import Hero from "@/components/landing/Hero";
 import Trips from "@/components/landing/Trips";
@@ -14,6 +15,9 @@ export default function Home() {
         <Trips />
       </div>
       <Gallery />
+
+      <ContactUs />
+
       <Footer />
     </div>
   );
