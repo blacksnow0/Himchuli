@@ -110,11 +110,8 @@ const Gallery = () => {
                   </Parallax>
                 </div>
 
-                <div className="absolute inset-0 flex flex-col items-center justify-center bg-black bg-opacity-30 text-white text-lg font-semibold">
+                <div className="absolute text-primary inset-0 flex flex-col items-center justify-center bg-black bg-opacity-30  text-lg font-semibold">
                   {image.alt}
-                  <button className="text-sm text-primary font-semibold">
-                    Check out
-                  </button>
                 </div>
               </SwiperSlide>
             );

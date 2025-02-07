@@ -71,7 +71,7 @@ export default function Navbar() {
 
             {/* Dropdown List */}
             <ul
-              className={`z-20 absolute left-0 mt-5 w-full bg-transparent shadow-md transition-all duration-300 ${
+              className={`z-20 absolute left-0 mt-5 w-full bg-green-50  shadow-md transition-all duration-300 ${
                 dropdownOpen ? "opacity-100 visible" : "opacity-0 invisible"
               }`}
             >
@@ -83,7 +83,7 @@ export default function Navbar() {
                 <li key={destination}>
                   <a
                     href={`#${destination.toLowerCase().replace(/ /g, "-")}`}
-                    className="block text-sm px-4 py-2 text-white hover:bg-primary hover:text-white transition-all duration-300"
+                    className="block text-sm px-4 py-2 text-black hover:bg-primary hover:text-white transition-all duration-300"
                   >
                     {destination}
                   </a>

@@ -78,10 +78,12 @@ const TrekCarousel = () => {
         }}
         spaceBetween={20}
         onSwiper={(swiper) => (swiperRef.current = swiper)}
-        className="rounded-lg shadow-lg"
       >
         {treks.map((trek, index) => (
-          <SwiperSlide key={index} className="flex flex-col items-center">
+          <SwiperSlide
+            key={index}
+            className="flex flex-col items-center rounded-lg shadow-lg"
+          >
             <div className="relative w-full h-80">
               <Image
                 src={trek.image}
