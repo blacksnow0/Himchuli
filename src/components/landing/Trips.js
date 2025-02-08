@@ -8,6 +8,8 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
+import Link from "next/link";
+
 import { AiOutlineLeft, AiOutlineRight } from "react-icons/ai";
 
 import Badimalika from "../../../public/images/background.jpg";
@@ -62,7 +64,7 @@ const TrekCarousel = () => {
         </p>
       </div>
       <button
-        className="absolute left-0 top-1/2 z-10 transform -translate-y-1/2 bg-gray-800 text-white p-3 rounded-full shadow-md transition-all hover:bg-gray-600 hover:scale-110"
+        className="absolute left-0 top-1/2 z-10 transform -translate-y-1/2  md:bg-gray-800 text-white p-3 md:rounded-full md:shadow-md transition-all hover:md:bg-gray-600 hover:scale-110"
         onClick={() => swiperRef.current?.slidePrev()}
       >
         <AiOutlineLeft size={24} />
@@ -78,43 +80,48 @@ const TrekCarousel = () => {
         }}
         spaceBetween={20}
         onSwiper={(swiper) => (swiperRef.current = swiper)}
+        className="rounded-lg shadow-lg"
       >
         {treks.map((trek, index) => (
           <SwiperSlide
             key={index}
-            className="flex flex-col items-center rounded-lg shadow-lg"
+            className="flex flex-col items-center rounded-lg shadow-lg bg-white"
           >
-            <div className="relative w-full h-80">
-              <Image
-                src={trek.image}
-                alt={trek.name}
-                fill
-                sizes="(max-width: 768px) 100vw, 50vw"
-                style={{ objectFit: "cover" }}
-                className="object-cover rounded-lg"
-                priority={index === 0}
-              />
-            </div>
-            <div className="p-4 text-center">
-              <h2 className="text-xl mb-3 font-bold text-secondary">
-                {trek.name}
-              </h2>
-              <p className="text-sm mb-3 text-gray-600">📍 {trek.location}</p>
-              <p className="text-sm mb-3 text-gray-600">⏳ {trek.duration}</p>
-              <p className="text-sm mb-3 text-gray-600">🌿 {trek.highlights}</p>
-              <p className="text-sm mb-3 font-semibold text-gray-600">
-                🧭 {trek.bestTime}
-              </p>
-            </div>
-            <button className="w-full bg-primary text-white font-semibold tracking-wider py-3">
-              Learn More
-            </button>
+            <Link href={`/itinerary/${encodeURIComponent(trek.name)}`}>
+              <div className="relative w-full h-80 ">
+                <Image
+                  src={trek.image}
+                  alt={trek.name}
+                  fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  style={{ objectFit: "cover" }}
+                  className="object-cover rounded-lg"
+                  priority={index === 0}
+                />
+              </div>
+              <div className="p-4 text-center">
+                <h2 className="text-xl mb-3 font-bold text-secondary">
+                  {trek.name}
+                </h2>
+                <p className="text-sm mb-3 text-gray-600">📍 {trek.location}</p>
+                <p className="text-sm mb-3 text-gray-600">⏳ {trek.duration}</p>
+                <p className="text-sm mb-3 text-gray-600">
+                  🌿 {trek.highlights}
+                </p>
+                <p className="text-sm mb-3 font-semibold text-gray-600">
+                  🧭 {trek.bestTime}
+                </p>
+              </div>
+              <button className="w-full bg-primary text-white font-semibold tracking-wider py-3">
+                Learn More
+              </button>
+            </Link>
           </SwiperSlide>
         ))}
       </Swiper>
 
       <button
-        className="absolute right-0 top-1/2 z-10 transform -translate-y-1/2 bg-gray-800 text-white p-3 rounded-full shadow-md transition-all hover:bg-gray-600 hover:scale-110"
+        className="absolute right-0 top-1/2 z-10 transform -translate-y-1/2  md:bg-gray-800 text-white p-3 md:rounded-full md:shadow-md transition-all hover:md:bg-gray-600 hover:scale-110"
         onClick={() => swiperRef.current?.slideNext()}
       >
         <AiOutlineRight size={24} />

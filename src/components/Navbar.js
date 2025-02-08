@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import Link from "next/link";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -8,9 +9,11 @@ export default function Navbar() {
   return (
     <nav className="bg-green-50 shadow-md">
       <div className="flex justify-between items-center px-10 py-4">
-        <h1 className="z-50 text-2xl font-bold text-gray-900 tracking-wider">
-          HIMCHULI
-        </h1>
+        <Link href={"/"}>
+          <h1 className="z-50 text-2xl font-bold text-secondary tracking-wider">
+            HIMCHULI
+          </h1>
+        </Link>
 
         {/* Hamburger Menu Button */}
         <button
@@ -37,12 +40,12 @@ export default function Navbar() {
         {/* Desktop Navbar */}
         <ul className="hidden md:flex space-x-10 ">
           <li className="relative group">
-            <a
-              href="#home"
+            <Link
+              href="/"
               className="tracking-widest font-semibold hover:text-primary transition-all duration-300"
             >
               Home
-            </a>
+            </Link>
             <span className="absolute left-0 bottom-0 h-0.5 bg-primary w-0 group-hover:w-full transition-all duration-300"></span>
           </li>
 
@@ -94,23 +97,23 @@ export default function Navbar() {
 
           {/* About-us */}
           <li className="relative group">
-            <a
-              href="#about-us"
+            <Link
+              href="/about"
               className="tracking-widest font-semibold hover:text-primary transition-all duration-300"
             >
               About-us
-            </a>
+            </Link>
             <span className="absolute left-0 bottom-0 h-0.5 bg-primary w-0 group-hover:w-full transition-all duration-300"></span>
           </li>
 
           {/* Contact */}
           <li className="relative group">
-            <a
-              href="#contact"
+            <Link
+              href="/contact"
               className="tracking-widest font-semibold hover:text-primary transition-all duration-300"
             >
               Contact
-            </a>
+            </Link>
             <span className="absolute left-0 bottom-0 h-0.5 bg-primary w-0 group-hover:w-full transition-all duration-300"></span>
           </li>
         </ul>

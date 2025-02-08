@@ -16,7 +16,7 @@ function ContactUs() {
   };
 
   return (
-    <div className="min-h-screen flex justify-center items-center py-12 bg-gradient-to-r from-green-100 to-blue-100">
+    <div className="h-full md:min-h-screen flex justify-center items-center py-12 ">
       <div className="max-w-7xl w-full flex items-center justify-center md:space-x-12 px-6">
         <div className="hidden md:flex flex-col justify-center w-full sm:w-1/2 mb-8 sm:mb-0">
           <Image
