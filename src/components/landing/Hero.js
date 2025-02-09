@@ -24,7 +24,7 @@ function Hero() {
   }, []);
 
   return (
-    <section className="relative w-full h-[60vh] md:h-[80vh] bg-cover bg-center bg-fixed">
+    <section className="relative w-full h-[40vh] md:h-[80vh] bg-cover bg-center bg-fixed">
       <div className="absolute inset-0 bg-gradient-to-b from-black via-transparent to-black opacity-60"></div>
 
       <div className="absolute inset-0 flex flex-col items-center justify-center text-center z-10 space-y-6">
