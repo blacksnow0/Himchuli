@@ -25,9 +25,9 @@ function Hero() {
 
   return (
     <section className="relative w-full h-[40vh] md:h-[80vh] bg-cover bg-center bg-fixed">
-      <div className="absolute inset-0 bg-gradient-to-b from-black via-transparent to-black opacity-60"></div>
+      <div className="absolute z-10 inset-0 bg-gradient-to-b from-black via-transparent to-black opacity-60"></div>
 
-      <div className="absolute inset-0 flex flex-col items-center justify-center text-center z-10 space-y-6">
+      <div className="absolute inset-0 flex flex-col items-center justify-center text-center z-20 space-y-6">
         <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white drop-shadow-lg">
           Escape to{" "}
           <Typewriter
@@ -45,10 +45,10 @@ function Hero() {
           <input
             type="text"
             placeholder="Search for destinations..."
-            className="p-3 w-80 sm:w-96 text-white border-2 border-primary outline-none bg-transparent transition-transform duration-300 ease-in-out transform focus:scale-105 focus:ring-2 focus:ring-primary"
+            className="p-3 w-80 sm:w-96 text-white border-4 border-primary outline-none bg-transparent transition-transform duration-300 ease-in-out transform focus:scale-105 focus:ring-2 focus:ring-primary"
           />
           <button className="p-3 absolute right-0 text-white">
-            <FaSearch />
+            <FaSearch className="text-xl" />
           </button>
         </div>
 
@@ -59,7 +59,7 @@ function Hero() {
 
       <div className="absolute inset-0 z-0">
         <div
-          className="absolute inset-0 transition-all duration-1000 ease-in-out"
+          className="absolute inset-0 transition-all duration-1000 ease-in"
           style={{
             backgroundImage: `url(${backgroundImages[currentImage].src})`,
             backgroundSize: "cover",

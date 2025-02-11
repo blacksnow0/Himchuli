@@ -7,10 +7,10 @@ export default function Navbar() {
   const [dropdownOpen, setDropdownOpen] = useState(false);
 
   return (
-    <nav className="bg-green-50 shadow-md">
+    <nav className="sticky top-0 bg-gray-900 z-50">
       <div className="flex justify-between items-center px-10 py-4">
         <Link href={"/"}>
-          <h1 className="z-50 text-2xl font-bold text-secondary tracking-wider">
+          <h1 className="z-50 text-2xl font-bold text-white tracking-wider">
             HIMCHULI
           </h1>
         </Link>
@@ -42,7 +42,7 @@ export default function Navbar() {
           <li className="relative group">
             <Link
               href="/"
-              className="tracking-widest font-semibold hover:text-primary transition-all duration-300"
+              className="tracking-widest text-white font-semibold hover:text-primary transition-all duration-300"
             >
               Home
             </Link>
@@ -54,7 +54,7 @@ export default function Navbar() {
             onMouseEnter={() => setDropdownOpen(true)}
             onMouseLeave={() => setDropdownOpen(false)}
           >
-            <button className="tracking-widest font-semibold hover:text-primary transition-all duration-300 flex items-center">
+            <button className="tracking-widest text-white font-semibold hover:text-primary transition-all duration-300 flex items-center">
               Destinations
               <svg
                 className="w-4 h-4 ml-1 transition-transform duration-300"
@@ -99,7 +99,7 @@ export default function Navbar() {
           <li className="relative group">
             <Link
               href="/about"
-              className="tracking-widest font-semibold hover:text-primary transition-all duration-300"
+              className="tracking-widest text-white font-semibold hover:text-primary transition-all duration-300"
             >
               About-us
             </Link>
@@ -110,7 +110,7 @@ export default function Navbar() {
           <li className="relative group">
             <Link
               href="/contact"
-              className="tracking-widest font-semibold hover:text-primary transition-all duration-300"
+              className="tracking-widest text-white font-semibold hover:text-primary transition-all duration-300"
             >
               Contact
             </Link>
@@ -127,7 +127,7 @@ export default function Navbar() {
       >
         {/* Home */}
         <a
-          href="#home"
+          href="/"
           className="text-2xl tracking-widest font-semibold hover:text-gray-900 transition"
           onClick={() => setIsOpen(false)}
         >
@@ -186,7 +186,7 @@ export default function Navbar() {
 
         {/* About-us */}
         <a
-          href="#about-us"
+          href="/about"
           className="text-2xl tracking-widest font-semibold hover:text-gray-900 transition"
           onClick={() => setIsOpen(false)}
         >
@@ -195,11 +195,29 @@ export default function Navbar() {
 
         {/* Contact */}
         <a
-          href="#contact"
+          href="/contact"
           className="text-2xl tracking-widest font-semibold hover:text-gray-900 transition"
           onClick={() => setIsOpen(false)}
         >
           Contact
+        </a>
+
+        {/* Treks offered */}
+        <a
+          href="/treks"
+          className="text-2xl tracking-widest font-semibold hover:text-gray-900 transition"
+          onClick={() => setIsOpen(false)}
+        >
+          Treks Offered
+        </a>
+
+        {/* Gallery */}
+        <a
+          href="/gallery"
+          className="text-2xl tracking-widest font-semibold hover:text-gray-900 transition"
+          onClick={() => setIsOpen(false)}
+        >
+          Gallery
         </a>
       </div>
     </nav>
