@@ -72,7 +72,7 @@ const TrekCarousel = () => {
 
       <Swiper
         modules={[Autoplay]}
-        autoplay={{ delay: 3000 }}
+        autoplay={{ delay: 5000 }}
         loop
         breakpoints={{
           640: { slidesPerView: 1 },
